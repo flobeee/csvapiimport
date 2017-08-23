@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filename: MyString
+  recordid: MyString
+  status: MyString
+  fieldto: MyString
+  site: MyString
+  credentials: MyString
+  export: MyString
+  object: MyString
+
+two:
+  filename: MyString
+  recordid: MyString
+  status: MyString
+  fieldto: MyString
+  site: MyString
+  credentials: MyString
+  export: MyString
+  object: MyString
