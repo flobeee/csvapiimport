@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "rest-client", "~> 1.6.7"
-gem "bootstrap-sass", "~> 2.3.2"
+gem 'bootstrap', '~> 4.0.0.beta2'
 gem "will_paginate", "~> 3.1.0"
 
 group :development, :test do

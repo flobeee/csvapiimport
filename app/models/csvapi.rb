@@ -5,7 +5,7 @@ class Csvapi < ApplicationRecord
   def self.import(file, export, site, credentials, object, fieldname, fieldto)
     CSV.foreach(file.path, headers: true) do |row|
 
-      product_hash = row.to_hash # exclude the price field
+      product_hash = row.to_hash 
       product = Csvapi.where(id: product_hash["id"])
 
       if product.count == 1
