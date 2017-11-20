@@ -55,10 +55,10 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <%= text_field_tag(:site , "Site URL") %>
+                <%= text_field_tag(:site , nil, placeholder: "https://yoursite.com") %>
               </div>
               <div class="col-md-4">
-                <%= text_field_tag(:credentials, "API Key") %>
+                <%= text_field_tag(:credentials, nil, placeholder: "API Key") %>
               </div>
               <div class="col-md-4">
                 <%= submit_tag "Import CSV", class: "btn btn-primary" %>

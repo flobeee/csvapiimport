@@ -1,6 +1,6 @@
 class CsvapiimportsController < ApplicationController
   def index
-    @csvapiimports = Csvapi.all.paginate(:page => params[:page], :per_page => 10)
+    @csvapiimports = Csvapi.all.paginate(:page => params[:page], :per_page => 10).order("created_at DESC")
   end
 
   def import
