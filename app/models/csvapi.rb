@@ -5,7 +5,7 @@ class Csvapi < ApplicationRecord
   def self.import(file, export, site, credentials, object, fieldname, fieldto)
     CSV.foreach(file.path, headers: true) do |row|
 
-      product_hash = row.to_hash 
+      product_hash = row.to_hash
       product = Csvapi.where(id: product_hash["id"])
 
       if product.count == 1
@@ -43,7 +43,7 @@ class Csvapi < ApplicationRecord
         headeraccept = "application/xml"
 
         #If a field is changing then add more to the mesaging.
-        if Csvapi.last.fieldname.length > 2 && Csvapi.last.fieldto.length > 2
+        if Csvapi.last.fieldname? && Csvapi.last.fieldto?
           fieldpayload = "<" + Csvapi.last.fieldname + ">" + Csvapi.last.fieldto + "</" + Csvapi.last.fieldname + ">"
         else
           fieldpayload = ""

@@ -41,15 +41,30 @@
          <h3>Import a CSV File</h3>
        </div>
         <%= form_tag import_csvapiimports_path, multipart: true do %>
-          <%= file_field_tag :file %>
-          <%= select_tag(:object, options_for_select([['Invoices',1],['Orders',2],['Expenses',3]])) %>
-          <%= select_tag(:export, options_for_select([['Do not update Exported Flag',2],['Mark Records as Exported No',0],['Mark records as Exported Yes',1]])) %>
-          <p>Site URL</p>
-          <%= text_field_tag :site %>
-          <p>Credentials</p>
-          <%= text_field_tag :credentials %>
-          <%= submit_tag "Import CSV", class: "btn btn-primary" %>
-        <% end %>
+         <div class="card-inner">
+            <div class="row">
+              <div class="col-md-4">
+                  <%= file_field_tag :file, class:"form-control" %>
+              </div>
+              <div class="col-md-4">
+                  <%= select_tag(:object, options_for_select([['Invoices',1],['Orders',2],['Expenses',3]]), class:"form-control") %>
+              </div>
+              <div class="col-md-4">
+                  <%= select_tag(:export, options_for_select([['Do not update Exported Flag',2],['Mark Records as Exported No',0],['Mark records as Exported Yes',1]]), class:"form-control") %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <%= text_field_tag(:site , nil, placeholder: "https://yoursite.com") %>
+              </div>
+              <div class="col-md-4">
+                <%= text_field_tag(:credentials, nil, placeholder: "API Key") %>
+              </div>
+              <div class="col-md-4">
+                <%= submit_tag "Import CSV", class: "btn btn-primary" %>
+              </div>
+          <% end %>
+        </div>
       </div>
     </div>
 </div>
