@@ -44,7 +44,7 @@
          <div class="card-inner">
             <div class="row">
               <div class="col-md-4">
-                  <%= file_field_tag :file, class:"form-control" %>
+                  <%= file_field_tag :file, class:"form-control", required: true %>
               </div>
               <div class="col-md-4">
                   <%= select_tag(:object, options_for_select([['Invoices',1],['Orders',2],['Expenses',3]]), class:"form-control") %>
@@ -55,10 +55,10 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <%= text_field_tag(:site , nil, placeholder: "https://yoursite.com") %>
+                <%= text_field_tag(:site , nil, placeholder: "https://yoursite.com", required: true) %>
               </div>
               <div class="col-md-4">
-                <%= text_field_tag(:credentials, nil, placeholder: "API Key") %>
+                <%= text_field_tag(:credentials, nil, placeholder: "API Key", required: true) %>
               </div>
               <div class="col-md-4">
                 <%= submit_tag "Import CSV", class: "btn btn-primary" %>
